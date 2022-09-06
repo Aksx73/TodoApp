@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/HomeFragment"
         android:name="com.absut.todo.ui.task.TaskFragment"
-        android:label="@string/first_fragment_label"
+        android:label="Tasks"
         tools:layout="@layout/fragment_task">
         <action
             android:id="@+id/action_HomeFragment_to_AddEditFragment"
@@ -17,11 +17,18 @@
     <fragment
         android:id="@+id/AddEditFragment"
         android:name="com.absut.todo.ui.addedittask.AddEditFragment"
-        android:label="@string/second_fragment_label"
+        android:label="{title}"
         tools:layout="@layout/fragment_add_edit">
 
-        <action
-            android:id="@+id/action_AddEditFragment_to_HomeFragment"
-            app:destination="@id/HomeFragment" />
+
+        <argument
+            android:name="task"
+            app:argType="com.absut.todo.data.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Add task" />
     </fragment>
 </navigation>

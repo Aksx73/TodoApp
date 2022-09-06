@@ -3,8 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.absut.todo.ui.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_24px"
+        android:title="Search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView" />
+    <item
+        android:icon="@drawable/ic_sort_black_24dp"
+        android:title="Sort"
+        app:showAsAction="always" >
+        <menu>
+            <item
+                android:id="@+id/action_sort_by_name"
+                android:title="Sort by name" />
+            <item
+                android:id="@+id/action_sort_by_date_created"
+                android:title="Sort by date created" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_hide_completed"
+        android:checkable="true"
+        android:title="Hide completed"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_delete_all_completed"
+        android:title="Delete all completed"
         app:showAsAction="never" />
 </menu>
